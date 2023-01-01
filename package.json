@@ -2,10 +2,37 @@
   "name": "gherkin-step-definition-generator",
   "version": "0.0.0",
   "license": "MIT",
+  "main": "main.js",
+	"build": {
+		"productName": "Gherkin Step Definition Generator",
+		"appId": "com.gherkin.step-definition.generator",
+		"files": [
+			"dist/**/*",
+			"node_modules/**/*",
+			"package.json",
+			"main.js"
+		],
+		"mac": {
+			"entitlements": "entitlements.mac.plist",
+			"target": [
+				"zip"
+			]
+		},
+		"win": {
+			"target": [
+				"zip",
+				"nsis"
+			]
+		},
+		"directories": {
+			"output": "build"
+		}
+	},
   "scripts": {
     "start": "nx serve",
     "build": "nx build",
-    "test": "nx test"
+    "test": "nx test",
+    "debug": "nx build --configuration=development && electron ."
   },
   "private": true,
   "dependencies": {
@@ -18,6 +45,7 @@
     "@angular/platform-browser-dynamic": "~15.0.0",
     "@angular/router": "~15.0.0",
     "@nrwl/angular": "15.4.2",
+    "electron": "^22.0.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
@@ -41,6 +69,7 @@
     "@typescript-eslint/eslint-plugin": "^5.36.1",
     "@typescript-eslint/parser": "^5.36.1",
     "cypress": "^11.0.0",
+    "electron-builder": "^23.6.0",
     "eslint": "~8.15.0",
     "eslint-config-prettier": "8.1.0",
     "eslint-plugin-cypress": "^2.10.3",
