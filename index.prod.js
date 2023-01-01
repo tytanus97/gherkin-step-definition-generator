@@ -1,5 +1,4 @@
 const electron = require('electron')
-const { ipcMain, Menu, MenuItem, screen } = require('electron')
 const app = electron.app
 const BrowserWindow = electron.BrowserWindow
 const path = require('path')

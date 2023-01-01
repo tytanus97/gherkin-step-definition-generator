@@ -3,36 +3,40 @@
   "version": "0.0.0",
   "license": "MIT",
   "main": "main.js",
-	"build": {
-		"productName": "Gherkin Step Definition Generator",
-		"appId": "com.gherkin.step-definition.generator",
-		"files": [
-			"dist/**/*",
-			"node_modules/**/*",
-			"package.json",
-			"main.js"
-		],
-		"mac": {
-			"entitlements": "entitlements.mac.plist",
-			"target": [
-				"zip"
-			]
-		},
-		"win": {
-			"target": [
-				"zip",
-				"nsis"
-			]
-		},
-		"directories": {
-			"output": "build"
-		}
-	},
+  "build": {
+    "productName": "Gherkin Step Definition Generator",
+    "appId": "com.gherkin.step-definition.generator",
+    "files": [
+      "dist/**/*",
+      "node_modules/**/*",
+      "package.json",
+      "index.js"
+    ],
+    "mac": {
+      "entitlements": "entitlements.mac.plist",
+      "target": [
+        "zip"
+      ]
+    },
+    "win": {
+      "target": [
+        "zip",
+        "nsis"
+      ]
+    },
+    "directories": {
+      "output": "build"
+    }
+  },
   "scripts": {
-    "start": "nx serve",
-    "build": "nx build",
+    "build-dev": "nx build --configuration=development",
+    "build-prod": "nx build --configuration=production",
     "test": "nx test",
-    "debug": "nx build --configuration=development && electron ."
+    "clean": "rimraf dist",
+    "debug": "nx build --configuration=development && electron .",
+    "electron": "wait-on http://localhost:4200 && electron .",
+    "prestart": "npm run clean",
+    "start": "concurrently -k \"nx serve\" \"npm run electron\""
   },
   "private": true,
   "dependencies": {
@@ -68,6 +72,7 @@
     "@types/node": "16.11.7",
     "@typescript-eslint/eslint-plugin": "^5.36.1",
     "@typescript-eslint/parser": "^5.36.1",
+    "concurrently": "^7.6.0",
     "cypress": "^11.0.0",
     "electron-builder": "^23.6.0",
     "eslint": "~8.15.0",
@@ -80,6 +85,7 @@
     "prettier": "^2.6.2",
     "ts-jest": "28.0.5",
     "ts-node": "10.9.1",
-    "typescript": "~4.8.2"
+    "typescript": "~4.8.2",
+    "wait-on": "^7.0.1"
   }
 }
