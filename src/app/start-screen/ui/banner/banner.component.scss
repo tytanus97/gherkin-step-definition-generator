@@ -1,0 +1,24 @@
+.banner-wrapper {
+    display: grid;
+
+    grid-template-columns: 1fr 3fr;
+
+    width: 500px;
+
+    margin: auto;
+}
+
+.banner-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: left;
+
+    display: flex;
+    align-items: center;
+}
+
+.banner-logo {
+    img {
+        width: 100%;
+    }
+}
