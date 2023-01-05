@@ -1,3 +1,5 @@
+import { FEATURE_STATE_NAME } from './state/feature.selectors';
+import { StoreModule } from '@ngrx/store';
 import { MaterialModule } from './../../material/material.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -8,6 +10,7 @@ import { GeneratorLayoutContainerComponent } from './ui/generator-layout-contain
 import { DefinitionOutputComponent } from './ui/definition-output/definition-output.component';
 import { GeneratorActionsComponent } from './ui/generator-actions/generator-actions.component';
 import { SharedModule } from '../shared/shared.module';
+import { featureReducer } from './state/feature.reducers';
 
 @NgModule({
   declarations: [
@@ -18,6 +21,9 @@ import { SharedModule } from '../shared/shared.module';
     DefinitionOutputComponent,
     GeneratorActionsComponent,
   ],
-  imports: [CommonModule, MaterialModule, SharedModule],
+  imports: [CommonModule,
+    MaterialModule,
+    SharedModule,
+    StoreModule.forFeature(FEATURE_STATE_NAME, featureReducer)],
 })
 export class StartScreenModule { }

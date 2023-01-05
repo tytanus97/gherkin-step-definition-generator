@@ -15,15 +15,14 @@ export class FilePickerComponent {
 
 	@Output() fileSelected = new EventEmitter()
 
-
 	toggleInput() {
 		this.fileInput.nativeElement.click()
 	}
 
-	async onFileSelected(event: any) {
-		const { files } = event.target
-		console.log('file', files[0])
-		console.log('text', await files[0].text())
+	onFileSelected(event: Event) {
+		const { files } = event.target as HTMLInputElement
+		const featureFile: File | null = files ? files[0] : null
+		this.fileSelected.emit(featureFile)
 	}
 
 }
