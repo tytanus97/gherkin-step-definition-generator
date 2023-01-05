@@ -1,0 +1,2 @@
+<button mat-raised-button [color]="buttonColor" (click)="toggleInput()">{{buttonLabel}}</button>
+<input #fileInput type="file" [accept]="acceptFileTypes" class="file-input" (change)="onFileSelected($event)">

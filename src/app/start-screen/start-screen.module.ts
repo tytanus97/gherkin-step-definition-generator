@@ -1,3 +1,4 @@
+import { MaterialModule } from './../../material/material.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StartScreenComponent } from './ui/start-screen/start-screen.component';
@@ -6,6 +7,7 @@ import { FeatureSelectComponent } from './ui/feature-select/feature-select.compo
 import { GeneratorLayoutContainerComponent } from './ui/generator-layout-container/generator-layout-container.component';
 import { DefinitionOutputComponent } from './ui/definition-output/definition-output.component';
 import { GeneratorActionsComponent } from './ui/generator-actions/generator-actions.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,6 @@ import { GeneratorActionsComponent } from './ui/generator-actions/generator-acti
     DefinitionOutputComponent,
     GeneratorActionsComponent,
   ],
-  imports: [CommonModule],
+  imports: [CommonModule, MaterialModule, SharedModule],
 })
-export class StartScreenModule {}
+export class StartScreenModule { }
