@@ -1,7 +1,7 @@
 <div class="feature-select-container">
 
     <gherkin-step-definition-generator-file-picker (fileSelected)="onFileSelected($event)"
-        [buttonLabel]="'Choose feature file'" [buttonColor]="'accent'" [acceptFileTypes]="'.feature'">
+        [buttonLabel]="chooseFileLabel$ | async" [buttonColor]="'accent'" [acceptFileTypes]="'.feature'">
     </gherkin-step-definition-generator-file-picker>
     <gherkin-step-definition-generator-feature-content></gherkin-step-definition-generator-feature-content>
 

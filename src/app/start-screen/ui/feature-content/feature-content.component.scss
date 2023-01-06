@@ -1,6 +1,10 @@
+@import "variables.scss";
 .feature-content-wrapper {
     font-size: 15px;
-    height: 700px;
+
+    background-color: $color-dark-300;
+    border-radius: 5px;
 
     margin-top: 16px;
+    padding: 8px;
 }
