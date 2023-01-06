@@ -15,6 +15,8 @@ function createWindow() {
         show: false,
         minHeight: 700,
         minWidth: 1260,
+        frame: false,
+		thickFrame: false,
         title: 'Gherkin step definition generator',
         backgroundColor: '#fff',
         webPreferences: {
@@ -32,6 +34,8 @@ function createWindow() {
     mainWindow.once('ready-to-show', () => {
 		mainWindow.show()
 	})
+
+    mainWindow.setMenu(null)
 
     if (devToolsEnabled) {
 		mainWindow.webContents.openDevTools({ mode: 'detach' })

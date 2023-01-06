@@ -9,13 +9,11 @@ import { loadFeatureFile } from '../../state/feature.actions';
 	templateUrl: './feature-select.component.html',
 	styleUrls: ['./feature-select.component.scss'],
 })
-export class FeatureSelectComponent implements OnInit {
+export class FeatureSelectComponent {
 
 	constructor(private readonly featureStore: Store<FeatureState>) { }
 
-	ngOnInit(): void {
-		this.featureStore.select(featureFileContent$).subscribe(console.log)
-	}
+
 
 	async onFileSelected(file: any) {
 		const featureFilePath = file.path

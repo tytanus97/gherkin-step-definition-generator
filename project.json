@@ -19,14 +19,20 @@
         "styles": [
           "./src/styles.scss",
           "./node_modules/quill/dist/quill.bubble.css",
-          "./node_modules/quill/dist/quill.snow.css"
+          "./node_modules/quill/dist/quill.snow.css",
+          "./node_modules/highlight.js/styles/dark.css",
+          "./src/assets/styles/variables.scss",
+          "./src/assets/styles/global.scss"
         ],
         "scripts": [
           {
             "input": "index.js",
             "inject": false
           }
-        ]
+        ],
+        "stylePreprocessorOptions": {
+          "includePaths": ["./src/assets/styles"]
+        }
       },
       "configurations": {
         "production": {
