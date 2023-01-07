@@ -1,10 +1,21 @@
 <div class="feature-select-container">
 
-    <gherkin-step-definition-generator-file-picker (fileSelected)="onFileSelected($event)"
-        [buttonLabel]="chooseFileLabel$ | async" [buttonColor]="'accent'" [acceptFileTypes]="'.feature'">
-    </gherkin-step-definition-generator-file-picker>
-    <gherkin-step-definition-generator-feature-content></gherkin-step-definition-generator-feature-content>
+    <div class="file-picker-wrapper">
+        <gherkin-step-definition-generator-file-picker (fileSelected)="onFileSelected($event)"
+            [buttonLabel]="chooseFileLabel$ | async" [buttonColor]="'accent'" [acceptFileTypes]="'.feature'">
+        </gherkin-step-definition-generator-file-picker>
+    </div>
 
 
+    <div class="feature-content-wrapper">
+        <div *ngIf="(featureTextContent$ | async) as featureContent;else noContent">
+            <quill-view [content]="featureContent | highlight: 'gherkin'" theme="snow" [format]="'html'"></quill-view>
+        </div>
+    </div>
 
+    <ng-template #noContent>
+        <div class="empty-content-wrapper">
+            <h3>No file selected</h3>
+        </div>
+    </ng-template>
 </div>

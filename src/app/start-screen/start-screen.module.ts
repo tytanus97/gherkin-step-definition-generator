@@ -12,7 +12,6 @@ import { DefinitionOutputComponent } from './ui/definition-output/definition-out
 import { GeneratorActionsComponent } from './ui/generator-actions/generator-actions.component';
 import { SharedModule } from '../shared/shared.module';
 import { featureReducer } from './state/feature.reducers';
-import { FeatureContentComponent } from './ui/feature-content/feature-content.component';
 import { HighlightPipe } from './utils/highlight.pipe';
 
 @NgModule({
@@ -23,17 +22,16 @@ import { HighlightPipe } from './utils/highlight.pipe';
     GeneratorLayoutContainerComponent,
     DefinitionOutputComponent,
     GeneratorActionsComponent,
-    FeatureContentComponent,
     HighlightPipe,
   ],
+  exports: [StartScreenComponent],
   imports: [
     CommonModule,
     MaterialModule,
     SharedModule,
     StoreModule.forFeature(FEATURE_STATE_NAME, featureReducer),
-    QuillModule
-  ],
-  exports: [StartScreenComponent]
+    QuillModule,
+  ]
 })
 export class StartScreenModule {
 }

@@ -1,0 +1,28 @@
+@import "variables.scss";
+
+.feature-select-container {
+    overflow-y: auto;
+    height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    background-color: red;
+}
+
+.feature-content-wrapper {
+    font-size: 15px;
+
+    background-color: $color-dark-300;
+    border-radius: 5px;
+    padding: 8px;
+
+    height: 100%;
+    overflow-y: auto;
+}
+
+.file-picker-wrapper {
+    padding: 16px 0;
+}
+
+.empty-content-wrapper {
+    height: 100%;
+}

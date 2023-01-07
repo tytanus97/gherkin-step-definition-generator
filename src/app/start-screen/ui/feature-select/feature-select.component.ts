@@ -1,4 +1,4 @@
-import { featureFile$ } from './../../state/feature.selectors';
+import { featureFile$, featureFileContent$ } from './../../state/feature.selectors';
 import { FeatureState } from './../../state/feature.state';
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
@@ -13,12 +13,14 @@ import { map, Observable } from 'rxjs';
 export class FeatureSelectComponent implements OnInit {
 
 	chooseFileLabel$: Observable<string>
+	featureTextContent$: Observable<string>
+
 	constructor(private readonly featureStore: Store<FeatureState>) { }
 	ngOnInit(): void {
 		this.chooseFileLabel$ = this.featureStore.select(featureFile$).pipe(map(file => !file ? 'Choose feature file' : 'Change file'))
+		this.featureTextContent$ = this.featureStore.select(featureFileContent$)
+
 	}
-
-
 
 	async onFileSelected(file: any) {
 		const featureFilePath = file.path
@@ -27,4 +29,6 @@ export class FeatureSelectComponent implements OnInit {
 
 		this.featureStore.dispatch(loadFeatureFile({ featureFile, featureFilePath, featureFileContent }))
 	}
+
+
 }

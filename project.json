@@ -22,7 +22,8 @@
           "./node_modules/quill/dist/quill.snow.css",
           "./node_modules/highlight.js/styles/dark.css",
           "./src/assets/styles/variables.scss",
-          "./src/assets/styles/global.scss"
+          "./src/assets/styles/global.scss",
+          "./src/assets/styles/mixins.scss"
         ],
         "scripts": [
           {
