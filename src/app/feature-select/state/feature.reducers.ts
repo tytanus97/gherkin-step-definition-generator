@@ -1,4 +1,4 @@
-import { on } from '@ngrx/store'
+import { Action, on } from '@ngrx/store'
 import { createReducer } from '@ngrx/store'
 import { loadFeatureFile } from './feature.actions'
 import { FeatureState, FEATURE_STATE_INITIAL } from './feature.state'
@@ -14,6 +14,6 @@ const _featureReducer = createReducer(FEATURE_STATE_INITIAL,
     })
 )
 
-export function featureReducer(state, action) {
+export function featureReducer(state: FeatureState, action: Action) {
     return _featureReducer(state, action)
 }

@@ -7,20 +7,20 @@
             </gherkin-step-definition-generator-file-picker>
         </div>
 
-        <div class="feature-select-file-name" *ngIf="featureFileName$ | async as featureFileName">
+        <!--  <div class="feature-select-file-name" *ngIf="featureFileName$ | async as featureFileName">
 
             <span>{{featureFileName}}</span>
 
-        </div>
+        </div> -->
     </div>
 
 
 
-    <div class="feature-content-wrapper">
+    <!--  <div class="feature-content-wrapper">
         <div *ngIf="(featureTextContent$ | async) as featureContent;else noContent">
             <quill-view [content]="featureContent | highlight: 'gherkin'" theme="snow" [format]="'html'"></quill-view>
         </div>
-    </div>
+    </div> -->
 
     <ng-template #noContent>
         <div class="empty-content-wrapper">

@@ -12,13 +12,14 @@
 .feature-content-wrapper {
     font-size: 15px;
 
-    background-color: $color-dark-300;
-    border-radius: 5px;
+    background-color: $color-dark-200;
+
     padding: 8px;
 
     height: 100%;
     overflow-y: auto;
 
+    @include mixins.roundedCorners;
     @include mixins.boxShadow;
 }
 

@@ -1,0 +1,7 @@
+<div class="generator-actions-wrapper">
+    <ng-container *ngFor="let action of actions$ | async">
+        <div class="single-action-wrapper">
+            <button mat-raised-button color="accent">{{action.name}}</button>
+        </div>
+    </ng-container>
+</div>

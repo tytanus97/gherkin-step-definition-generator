@@ -1,5 +1,5 @@
-import { featureFile$, featureFileContent$ } from './../../state/feature.selectors';
-import { FeatureState } from './../../state/feature.state';
+import { featureFile$, featureFileContent$ } from '../../state/feature.selectors';
+import { FeatureState } from '../../state/feature.state';
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { loadFeatureFile } from '../../state/feature.actions';

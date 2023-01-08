@@ -3,3 +3,7 @@
 @mixin boxShadow {
     box-shadow: 2px 2px 9px 1px #0000004a;
 }
+
+@mixin roundedCorners {
+    border-radius: 5px;
+}
