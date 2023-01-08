@@ -1,10 +1,19 @@
 <div class="feature-select-container">
 
-    <div class="file-picker-wrapper">
-        <gherkin-step-definition-generator-file-picker (fileSelected)="onFileSelected($event)"
-            [buttonLabel]="chooseFileLabel$ | async" [buttonColor]="'accent'" [acceptFileTypes]="'.feature'">
-        </gherkin-step-definition-generator-file-picker>
+    <div class="feature-select-header">
+        <div class="file-picker-wrapper">
+            <gherkin-step-definition-generator-file-picker (fileSelected)="onFileSelected($event)"
+                [buttonLabel]="chooseFileLabel$ | async" [buttonColor]="'accent'" [acceptFileTypes]="'.feature'">
+            </gherkin-step-definition-generator-file-picker>
+        </div>
+
+        <div class="feature-select-file-name" *ngIf="featureFileName$ | async as featureFileName">
+
+            <span>{{featureFileName}}</span>
+
+        </div>
     </div>
+
 
 
     <div class="feature-content-wrapper">
