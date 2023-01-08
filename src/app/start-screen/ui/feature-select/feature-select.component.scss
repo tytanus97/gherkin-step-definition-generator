@@ -1,11 +1,11 @@
 @import "variables.scss";
 
 .feature-select-container {
-    overflow-y: auto;
     height: 100%;
     display: grid;
     grid-template-rows: auto 1fr;
-    background-color: red;
+
+    padding: 16px;
 }
 
 .feature-content-wrapper {
@@ -17,6 +17,8 @@
 
     height: 100%;
     overflow-y: auto;
+
+    box-shadow: 2px 2px 9px 1px #0000004a;
 }
 
 .file-picker-wrapper {
@@ -25,4 +27,14 @@
 
 .empty-content-wrapper {
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: $color-font-dark;
+
+    .empty-content-text {
+        outline: 2px dashed;
+        outline-offset: 64px;
+    }
 }
